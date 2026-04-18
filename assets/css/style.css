@@ -1,0 +1,867 @@
+/* =====================
+   RESET
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =====================
+   COVER OPENING
+===================== */
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .6s ease;
+}
+
+.cover.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../img/cover.jpg') center/cover no-repeat;
+  filter: brightness(.25);
+}
+
+.cover-content {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+}
+
+.cover-logo {
+  font-size: 64px;
+  letter-spacing: 8px;
+  color: #e50914;
+  margin-bottom: 24px;
+  animation: logoBounce 1.6s ease-out infinite;
+}
+
+@keyframes logoBounce {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-12px); }
+  40% { transform: translateY(0); }
+  60% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.cover-dear {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cover-dear strong {
+  font-size: 22px;
+  color: #fff;
+}
+
+.cover-btn {
+  padding: 16px 28px;
+  font-size: 16px;
+}
+
+/* =====================
+   MUSIC TOGGLE
+===================== */
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 18px;
+  border-radius: 30px;
+  background: rgba(20,20,20,.85);
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* =====================
+   PROFILE SELECTION
+===================== */
+#profiles {
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+#profiles.show {
+  opacity: 1;
+}
+
+.profiles {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #333;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .3s;
+  font-size: 14px;
+}
+
+.profile:hover {
+  border-color: #fff;
+  transform: scale(1.08);
+}
+
+/* =====================
+   HERO
+===================== */
+.hero-detail {
+  position: relative;
+  min-height: 90vh;
+  padding: 60px 20px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../img/cover.jpg') center/cover no-repeat;
+  filter: brightness(.45);
+}
+
+.hero-info {
+  position: relative;
+  max-width: 640px;
+}
+
+.badge {
+  border: 1px solid #777;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.badge.red {
+  color: #e50914;
+  border-color: #e50914;
+}
+
+.title {
+  font-size: 48px;
+  margin: 16px 0;
+}
+
+.meta span {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.match {
+  color: #46d369;
+}
+
+.desc {
+  color: #ddd;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+.event-info {
+  margin-top: 14px;
+}
+
+.event-date {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #ddd;
+}
+
+.actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 14px;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+  padding: 12px 22px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.primary {
+  background: #e50914;
+  color: #fff;
+}
+
+.secondary {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+
+.full {
+  width: 100%;
+}
+
+/* =====================
+   GALLERY
+===================== */
+.row {
+  padding: 60px 20px;
+}
+
+.row h2 {
+  margin-bottom: 16px;
+}
+
+.row-cards {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.row-cards img {
+  height: 260px;
+  border-radius: 10px;
+}
+
+/* =====================
+   GROOM & BRIDE (CAST)
+===================== */
+.cast-section {
+  padding: 80px 20px;
+}
+
+.cast-title {
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.cast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* CARD */
+.cast-card {
+  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  border: 1px solid #222;
+}
+
+/* AVATAR */
+.cast-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cast-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* NAME & ROLE */
+.cast-name {
+  font-size: 26px;
+  margin: 12px 0 4px;
+}
+
+.cast-role {
+  display: block;
+  color: #e50914;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* DESC */
+.cast-desc {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* IG BUTTON */
+.cast-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #2a2a2a;
+}
+
+.cast-ig:hover {
+  background: #2a2a2a;
+}
+
+/* =====================
+   EPISODES
+===================== */
+.episodes {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.episode-card {
+  display: flex;
+  gap: 20px;
+  background: #111;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 18px;
+}
+
+.thumb {
+  width: 90px;
+  height: 64px;
+  background: #222;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e50914;
+  font-size: 20px;
+}
+
+.ep-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.ep-info h3 span {
+  font-size: 13px;
+  color: #aaa;
+  margin-left: 8px;
+}
+
+.ep-info p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* =====================
+   LOCATION
+===================== */
+.location {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.location-card {
+  background: #111;
+  max-width: 420px;
+  margin: auto;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.location-card p {
+  color: #aaa;
+}
+
+.location-map {
+  margin: 18px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #222;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+
+/* =====================
+   CARD SECTIONS
+===================== */
+.rsvp-section,
+.gift-section,
+.comment-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.rsvp-card,
+.gift-card,
+.comment-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg,#1a1a1a,#111);
+  border-radius: 22px;
+  padding: 32px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 18px;
+}
+
+/* =====================
+   FORM
+===================== */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  background: #222;
+  border: 1px solid #333;
+  color: #fff;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.rsvp-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* =====================
+   GIFT
+===================== */
+.gift-item {
+  background: #222;
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.gift-item strong {
+  font-size: 16px;
+}
+
+.gift-item small {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.gift-item.qr-main {
+  border: 1px solid rgba(229, 9, 20, 0.6);
+  background: linear-gradient(145deg, #141414, #0a0a0a);
+}
+
+.gift-item.qr-main .btn {
+  background: #e50914;
+  color: #fff;
+}
+
+/* =====================
+   COMMENT
+===================== */
+
+.review-section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.review-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.review-card {
+  background: linear-gradient(145deg, #111, #0a0a0a);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.review-meta {
+  font-size: 12px;
+  color: #22c55e;
+}
+
+.review-text {
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+/* =====================
+   REVIEW SCROLL CONTAINER
+===================== */
+.review-wrapper {
+  max-height: 420px;        /* tinggi container */
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* SCROLLBAR STYLE */
+.review-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.review-wrapper::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 10px;
+}
+
+.review-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.review-card:first-child {
+  border: 2px solid #e50914;
+}
+
+/* =====================
+   POPUP
+===================== */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.popup-box {
+  background: linear-gradient(180deg,#1a1a1a,#0e0e0e);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+}
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (min-width: 1024px) {
+  .rsvp-card,
+  .gift-card,
+  .comment-card,
+  .location-card {
+    max-width: 720px;
+    padding: 42px;
+  }
+
+  .location-map iframe {
+    height: 360px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .rsvp-card,
+  .gift-card,
+  .comment-card,
+  .location-card {
+    max-width: 560px;
+    padding: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cover-logo { font-size: 48px; }
+  .title { font-size: 32px; }
+  .actions { flex-direction: column; }
+  .rsvp-row { flex-direction: column; }
+  .row-cards img { height: 200px; }
+}
+
+@media (min-width: 768px) {
+  .cast-list {
+    flex-direction: row;
+  }
+
+  .cast-card {
+    flex: 1;
+  }
+}
+
+/* =====================
+   COUNTDOWN
+===================== */
+.countdown {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: rgba(0,0,0,.55);
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-width: 72px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.time-box span {
+  font-size: 26px;
+  font-weight: bold;
+  display: block;
+}
+
+.time-box small {
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .countdown {
+    justify-content: flex-start;
+  }
+
+  .time-box span {
+    font-size: 22px;
+  }
+}
+
+/* =====================
+   HERO MOBILE FIX
+===================== */
+@media (max-width: 767px) {
+  .hero-detail {
+    min-height: auto;
+    padding-bottom: 80px;
+  }
+
+  .hero-info {
+    max-width: 100%;
+  }
+
+  .hero-info > * {
+    margin-bottom: 14px;
+  }
+}
+
+/* =====================
+   HERO MOBILE FIX
+===================== */
+@media (max-width: 767px) {
+
+  /* HERO WRAPPER */
+  .hero-detail {
+    min-height: auto;
+    padding: 100px 16px 40px;
+  }
+
+  .hero-info {
+    max-width: 100%;
+  }
+
+  /* BADGES */
+  .hero-info .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 4px 6px;
+    margin-bottom: 6px;
+  }
+
+  /* TITLE */
+  .title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  /* META */
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  /* DESCRIPTION */
+  .desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* EVENT DATE */
+  .event-date {
+    font-size: 13px;
+  }
+
+  /* COUNTDOWN */
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .countdown .time-box {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .countdown .time-box strong {
+    font-size: 22px;
+  }
+
+  .countdown .time-box span {
+    font-size: 12px;
+  }
+
+  /* ACTION BUTTONS */
+  .actions {
+    gap: 12px;
+  }
+
+  .actions .btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  /* MUSIC BUTTON */
+  .music-btn {
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+    padding: 10px 14px;
+  }
+}
+
+/* =====================
+   COUNTDOWN MOBILE HORIZONTAL
+===================== */
+@media (max-width: 767px) {
+
+  .countdown {
+    display: flex;
+    flex-wrap: nowrap;          /* PAKSA 1 BARIS */
+    gap: 10px;
+    overflow-x: auto;           /* AMAN KALAU LAYAR KECIL */
+    padding-bottom: 6px;
+  }
+
+  .countdown::-webkit-scrollbar {
+    display: none;              /* HIDE SCROLLBAR */
+  }
+
+  .time-box {
+    min-width: 64px;            /* PERKECIL BOX */
+    padding: 10px 8px;
+    flex-shrink: 0;             /* JANGAN MENGECIL SENDIRI */
+  }
+
+  .time-box span {
+    font-size: 18px;
+  }
+
+  .time-box small {
+    font-size: 10px;
+  }
+}
+
+/* =====================
+   COUNTDOWN OPACITY TWEAK
+===================== */
+.time-box {
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =====================
+   HERO ACTION CENTER
+===================== */
+.actions {
+  justify-content: center;
+}
+
+.actions .btn.primary {
+  text-align: center;
+}
